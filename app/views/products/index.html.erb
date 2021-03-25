@@ -1,0 +1,14 @@
+<h1>Umm, cart?</h1>
+
+<% if session[:cart] %>
+  <% session[:cart].each do |item| %>
+    <% #byebug %>
+    <%= item %>
+  <% end %>
+<% end %>
+
+<%= form_tag url:'/', method:'post' do %>
+  <%= label_tag (:product) %>
+  <%= text_field_tag (:product) %>
+  <%= submit_tag "add to cart" %>
+<% end %>
